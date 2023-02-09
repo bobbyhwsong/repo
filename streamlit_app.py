@@ -76,28 +76,35 @@ if add_sidebar == VIEW_PROPOSAL:
     st.write(DIVIDER)
     
     st.subheader('1. 문제 정의')
+    st.markdown('###### 매출액은 크지만 이익은 크지 않은 동남아시아 수익 구조 개선')
     st.write('''동남아시아 지역에서 발생하는 매출이 840,428.9613인데 비해 수익은 17,552.6913으로 현저히 적은 것을 볼 수 있다.
                 아래 비중 그래프를 봐도, 매출의 25%를 차지하는 동남아시아가 수익에서는 4.55%밖에 되지 않는 것을 볼 수 있다.
                 이에 동남아시아 지역에서의 수익구조를 개선할 필요가 있다. ''')
     
-    fig = px.pie(df,values='매출',names='지역', title='지역 별 매출 비중', color_discrete_sequence=px.colors.sequential.RdBu)
+    fig = px.pie(df,values='매출',names='지역', title='지역 별 매출 비중', color_discrete_sequence=px.colors.sequential.RdBu, category_orders={'지역':['동남아시아','오세아니아','북아시아','중앙아시아']})
     fig.update_traces(textposition='inside', textinfo='percent+label')
     st.plotly_chart(fig)
     
-    fig = px.pie(df,values='수익',names='지역', title='지역 별 수익 비중', color_discrete_sequence=px.colors.sequential.RdBu)
+    fig = px.pie(df,values='수익',names='지역', title='지역 별 수익 비중', color_discrete_sequence=px.colors.sequential.RdBu, category_orders={'지역':['동남아시아','오세아니아','북아시아','중앙아시아']})
     fig.update_traces(textposition='inside', textinfo='percent+label')
     st.plotly_chart(fig)
-    
     st.write(DIVIDER)
     
     st.subheader('2. 지표 설정')
-    st.markdown('##### 어떤 지표가 목적에 부합하는가')
-    
+    st.markdown('##### 동남아시아 지역의 수익, 매출, 매출액 순이익률(ROS)')
+    st.write('''동남아시아의 수익 구조를 개선하는 것이기에 동남아시아의 수익이 중요한 지표가 될 것이다.
+                또한, 수익만 증가하는 것보다는 매출이 증가하는 것이 의미가 있을 것이기에 매출도 중요한 지표가 될 것이며,
+                매출 중에 수익이 차지하는 비율도 중요한 지표가 될 것이다. ''')
     st.write(DIVIDER)
     
     st.subheader('3. 현황 파악')
-    st.markdown('##### 현재 성과 및 결과 파악')
-    
+    st.markdown('##### 동남아시아 지역의 수익')
+    st.write(17552.6913)
+    st.markdown('##### 동남아시아 지역의 매출')
+    st.write(840428.9613) 
+    st.markdown('##### 동남아시아 지역의 매출액 순이익률(ROS)')
+    ROS = 17552.6913/840428.9613
+    st.write(ROS)
     st.write(DIVIDER)
     
     st.subheader('4. 평가')
@@ -119,89 +126,6 @@ if add_sidebar == VIEW_PROPOSAL:
     st.markdown('##### 결론 요약, 분석 목적에 어떤 의미가 있는지 설명')
     
     st.write(DIVIDER)
-    
-    code = '''
-        pip uninstall streamlit
-        pip install streamlit-nightly --upgrade
-        '''
-    st.code(code, language='bash')
-
-
-    st.markdown('#### Run streamlit server')
-    code = '''
-            streamlit run streamlit_test.py'''
-    st.code(code, language='bash')
-    
-
-    st.markdown('#### Command Line')
-    code = '''
-        streamlit --help
-        streamlit run your_script.py
-        streamlit hello
-        streamlit config show
-        streamlit cache clear
-        streamlit docs
-        streamlit --version
-        '''
-    st.code(code, language='bash')
-
-    st.markdown('#### Import Convention')
-    code = '''
-            # Import Convention
-            import streamlit as st'''
-    st.code(code, language='python')
-
-    st.write(DIVIDER)
-    
-    st.subheader('Template')    
-
-    code = '''
-        #<Sample code for the template>
-        
-        import streamlit as st
-        import pandas as pd
-        
-        ####################################
-        # 1_ Define Functions
-        # - Load data
-        # - Clean data
-        ####################################
-        @st.cache
-        def load_data():
-            #filepath = 'some_filepath.csv'
-            #df = pd.read_csv(filepath)
-            df = pd.DataFrame({
-                'first column': [1, 2, 3, 4],
-                'second column': [10, 20, 30, 50],
-            })
-            return df
-        df = load_data()
-        ####################################
-        # 2_ Engineer Data
-        # - prepare data for output
-        ####################################
-        df.column = ['Number', 'Scores']
-        df['Level'] = ['C', 'B', 'B', 'A']
-        ####################################
-        # 3_Build Dashboard using Streamlit
-        ####################################
-        st.title('You can build Streamlit Webapp')
-        add_sidebar = st.sidebar.selectbox('Select Method', 'First','Second')
-        if add_sidebar == 'First':
-            # View for s'First'- show matrix, graph etc.
-        else :
-            # View for 'Second' - show matrix, graph etc.
-        '''
-    st.code(code, language='python')
-
-
-    st.write(DIVIDER)
-    st.subheader('References')
-    url1 = 'https://docs.streamlit.io/'
-    url2 = 'https://bittersweet-match-49f.notion.site/Streamlit-5ca73e87f96a443a902eefc5c721e3d0'
-
-    url1
-    url2
 
 ####################################
 # - VIEW_DASHBOARD
