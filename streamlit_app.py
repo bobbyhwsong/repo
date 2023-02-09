@@ -76,11 +76,17 @@ if add_sidebar == VIEW_PROPOSAL:
     st.write(DIVIDER)
     
     st.subheader('1. 문제 정의')
-    st.markdown('''##### 동남아시아 지역에서 발생하는 매출에 비해 수익이 현저히 적은 것을 볼 수 있다. 이에 동남아시아 지역에서의 수익구조를 개선할 필요가 있다.''')
+    st.write('''동남아시아 지역에서 발생하는 매출이 840,428.9613인데 비해 수익은 17,552.6913으로 현저히 적은 것을 볼 수 있다.
+                아래 비중 그래프를 봐도, 매출의 25%를 차지하는 동남아시아가 수익에서는 4.55%밖에 되지 않는 것을 볼 수 있다.
+                이에 동남아시아 지역에서의 수익구조를 개선할 필요가 있다. ''')
     
-    st.write('''fig = px.pie(data,values='매출',names='지역', title='지역 별 매출 비중', color_discrete_sequence=px.colors.sequential.RdBu)
-             fig.update_traces(textposition='inside', textinfo='percent+label')
-             fig.show()''')
+    fig = px.pie(df,values='매출',names='지역', title='지역 별 매출 비중', color_discrete_sequence=px.colors.sequential.RdBu)
+    fig.update_traces(textposition='inside', textinfo='percent+label')
+    st.plotly_chart(fig)
+    
+    fig = px.pie(df,values='수익',names='지역', title='지역 별 수익 비중', color_discrete_sequence=px.colors.sequential.RdBu)
+    fig.update_traces(textposition='inside', textinfo='percent+label')
+    st.plotly_chart(fig)
     
     st.write(DIVIDER)
     
