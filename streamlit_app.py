@@ -36,7 +36,7 @@ if add_sidebar == VIEW_PROPOSAL:
     st.write(DIVIDER)
     
     st.subheader('1. 문제 정의')
-    st.markdown('#### 풀고자하는 문제와 목적을 명확하게')
+    st.markdown('##### 풀고자하는 문제와 목적을 명확하게')
     st.write(DIVIDER)
     
     st.subheader('2. 지표 설정')
