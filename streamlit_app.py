@@ -61,7 +61,7 @@ with st.sidebar:
     )
     
 data_load_state = st.text('Loading data...')
-data = load_data()
+df = load_data()
 data_load_state.text("데이터 불러오기 완료!")
 
 if st.checkbox('데이터 보기'):
