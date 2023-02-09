@@ -11,12 +11,12 @@ DIVIDER = '---------------------------------------------------------------------
 # - Sidebar
 ####################################
 with st.sidebar:
-    st.title("기획서 및 대시보드")
-    st.markdown("**- 기획서 :** Introduction & References")
-    st.markdown("**- 대시보드 :** Text elements & st.write method")
+    st.title("비저블 지원")
+    st.markdown("**- 기획서 :** 기획서 프로세스")
+    st.markdown("**- 대시보드 :** 대시보드 스케치")
 
-VIEW_PROPOSAL = 'Proposal'
-VIEW_DASHBOARD = 'Dashboard'
+VIEW_PROPOSAL = '기획서'
+VIEW_DASHBOARD = '대시보드'
 
 sidebar = [VIEW_PROPOSAL, 
         VIEW_DASHBOARD]
@@ -33,7 +33,7 @@ with st.sidebar:
 ####################################
 if add_sidebar == VIEW_PROPOSAL:
     st.title(add_sidebar)
-    st.header('기획서')
+    #st.header('기획서')
     st.write(DIVIDER)
     st.subheader('Github Repo Available!')
     url1 = 'https://github.com/jhbale11/All-About-Streamlit'
