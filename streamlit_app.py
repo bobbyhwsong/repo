@@ -1,42 +1,26 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-st.title('Uber pickups in NYC')
 	
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
             'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+DIVIDER = '--------------------------------------------------------------------------------'
+
 ####################################
 # - Sidebar
 ####################################
 with st.sidebar:
-    st.image("https://avatars.githubusercontent.com/u/16810004?v=4", width=300)
-    st.title("Hi. This is jhbale11's Streamlit Study Repo")
-    st.title("This is available page list!")
-    st.markdown("**- Welcome :** Introduction & References")
-    st.markdown("**- Text :** Text elements & st.write method")
-    st.markdown("**- Data :** Data Display & Elements Display")
-    st.markdown("**- Chart :** Chart Elements")
-    st.markdown("**- Widget :** Display Interactive Widgets")
-    st.markdown("**- Sample :** Toy project for uber pickup in NYC")
+    st.title("기획서 및 대시보드")
+    st.markdown("**- 기획서 :** Introduction & References")
+    st.markdown("**- 대시보드 :** Text elements & st.write method")
 
-VIEW_WELCOME = 'Welcome '
+VIEW_PROPOSAL = 'Proposal'
+VIEW_DASHBOARD = 'Dashboard'
 
-VIEW_API_TEXT = 'Text'
-VIEW_API_DATA = 'Data'
-VIEW_API_CHART = 'Chart'
-VIEW_UBER_NYC = 'Sample: Uber picksup in NYC'
-VIEW_API_WIDGET = 'Widget'
-
-
-sidebar = [VIEW_WELCOME, 
-        VIEW_API_TEXT,
-        VIEW_API_DATA,
-        VIEW_API_CHART,
-        VIEW_API_WIDGET,
-        VIEW_UBER_NYC]
-add_sidebar = st.sidebar.selectbox('Choose Page You Want to See', sidebar) #('Aggregate Metrics','Individual Video Analysis'))
-
+sidebar = [VIEW_PROPOSAL, 
+        VIEW_DASHBOARD]
+add_sidebar = st.sidebar.selectbox('Choose Page You Want to See', sidebar)
 
 with st.sidebar:
     add_radio = st.radio(
@@ -45,11 +29,11 @@ with st.sidebar:
     )
 
 ####################################
-# - VIEW_WELCOME
+# - VIEW_PROPOSAL
 ####################################
-if add_sidebar == VIEW_WELCOME:
+if add_sidebar == VIEW_PROPOSAL:
     st.title(add_sidebar)
-    st.header('Let\'s learn Streamlit library')
+    st.header('기획서')
     st.write(DIVIDER)
     st.subheader('Github Repo Available!')
     url1 = 'https://github.com/jhbale11/All-About-Streamlit'
@@ -141,6 +125,7 @@ if add_sidebar == VIEW_WELCOME:
     url1
     url2
 
+st.title('Uber pickups in NYC')
 
 @st.cache
 def load_data(nrows):
