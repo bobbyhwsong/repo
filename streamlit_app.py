@@ -38,8 +38,8 @@ if add_sidebar == VIEW_PROPOSAL:
     st.write(DIVIDER)
     
     st.subheader('1. 문제 정의')
-    st.markdown('##### 동남아시아 지역에서 매출이 차지하는 비중에 비해 수익이 차지하는 비중이 현저히 작은 것을 볼 수 있다.')
-    st.markdown()
+    st.markdown('##### 동남아시아 지역에서 발생하는 매출에 비해 수익이 현저히 적은 것을 볼 수 있다.')
+    st.markdown('##### 이에 동남아시아 지역에서의 수익구조를 개선할 필요가 있다.')
     st.write(DIVIDER)
     
     st.subheader('2. 지표 설정')
