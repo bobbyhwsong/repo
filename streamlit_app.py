@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import plotly.express as px
+import matplotlib.pyplot as plt
 	
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
@@ -36,10 +38,8 @@ if add_sidebar == VIEW_PROPOSAL:
     st.write(DIVIDER)
     
     st.subheader('1. 문제 정의')
-    st.markdown('##### 풀고자하는 문제와 목적을 명확하게')
-    st.write('''
-             북아시아에서의 매출 증진
-             ''')
+    st.markdown('##### 동남아시아 지역에서 매출이 차지하는 비중에 비해 수익이 차지하는 비중이 현저히 작은 것을 볼 수 있다.')
+    st.markdown()
     st.write(DIVIDER)
     
     st.subheader('2. 지표 설정')
