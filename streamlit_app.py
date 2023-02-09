@@ -33,16 +33,42 @@ with st.sidebar:
 ####################################
 if add_sidebar == VIEW_PROPOSAL:
     st.title(add_sidebar)
-    #st.header('기획서')
     st.write(DIVIDER)
-    st.subheader('Github Repo Available!')
-    url1 = 'https://github.com/jhbale11/All-About-Streamlit'
-    url1 
-
+    
+    st.subheader('1. 문제 정의')
+    st.markdown('### 풀고자하는 문제와 목적을 명확하게')
     st.write(DIVIDER)
-    st.subheader('Install & Import')
+    
+    st.subheader('2. 지표 설정')
+    st.markdown('### 어떤 지표가 목적에 부합하는가')
+    
+    st.write(DIVIDER)
+    
+    st.subheader('3. 현황 파악')
+    st.markdown('### 현재 성과 및 결과 파악')
+    
+    st.write(DIVIDER)
+    
+    st.subheader('4. 평가')
+    st.markdown('### 그 결과에 대한 평가 기준과 비교 대상')
+    
+    st.write(DIVIDER)
+    
+    st.subheader('5. 원인 분석')
+    st.markdown('### 문제와 원인의 관련성 분석')
+    
+    st.write(DIVIDER)
+    
+    st.subheader('6. 해결 방안')
+    st.markdown('### 원인에 대한 해결 방안')
+    
+    st.write(DIVIDER)
 
-    st.markdown('#### Pre-release Features')
+    st.subheader('7. 결론')
+    st.markdown('### 결론 요약, 분석 목적에 어떤 의미가 있는지 설명')
+    
+    st.write(DIVIDER)
+    
     code = '''
         pip uninstall streamlit
         pip install streamlit-nightly --upgrade
@@ -54,6 +80,7 @@ if add_sidebar == VIEW_PROPOSAL:
     code = '''
             streamlit run streamlit_test.py'''
     st.code(code, language='bash')
+    
 
     st.markdown('#### Command Line')
     code = '''
